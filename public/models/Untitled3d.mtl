@@ -1,0 +1,209 @@
+# Blender 5.1.0 MTL File: 'Untitled3d.blend'
+# www.blender.org
+
+newmtl Back
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:/Users/jai34/Downloads/Compressed/Shirt_OBJ/Shirt OBJ/I:/3D Models For Sales/Outfits/Shirt/Custom Textures/Shirt Custom Textures/Shirt Back/Shirt Back_Diffuse.jpg
+map_Bump C:/Users/jai34/Downloads/Compressed/Shirt_OBJ/Shirt OBJ/I:/3D Models For Sales/Outfits/Shirt/Custom Textures/Shirt Custom Textures/Shirt Back/Shirt Back_Normal.jpg
+
+newmtl Band__FRONT_4901
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+newmtl Bottons
+Ns 32.000008
+Ka 1.000000 1.000000 1.000000
+Kd 0.039200 0.043100 0.043100
+Ks 0.792000 0.792000 0.792000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Bottons_Threads
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.054900 0.070600 0.070600
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+newmtl Cuffs_Boundry
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:/Users/jai34/Downloads/Compressed/Shirt_OBJ/Shirt OBJ/I:/3D Models For Sales/Outfits/Shirt/Custom Textures/Shirt Custom Textures/Base Textures/Shirt Texture Black_Diffuse.jpg
+map_Bump C:/Users/jai34/Downloads/Compressed/Shirt_OBJ/Shirt OBJ/I:/3D Models For Sales/Outfits/Shirt/Custom Textures/Shirt Custom Textures/Base Textures/Shirt Texture Black_Normal.jpg
+
+newmtl Fabric2196563_FRONT_7597
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+newmtl Fabric2196563_SIDE_7597
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+newmtl Front
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:/Users/jai34/Downloads/Compressed/Shirt_OBJ/Shirt OBJ/I:/3D Models For Sales/Outfits/Shirt/Custom Textures/Shirt Custom Textures/Shirt Front/Shirt Front_Diffuse.jpg
+map_Bump C:/Users/jai34/Downloads/Compressed/Shirt_OBJ/Shirt OBJ/I:/3D Models For Sales/Outfits/Shirt/Custom Textures/Shirt Custom Textures/Shirt Front/Shirt Front_Normal.jpg
+
+newmtl Material2196492
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+newmtl Material2196493
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+newmtl Material3988
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+newmtl PT_FABRIC_FRONT_4948
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+newmtl Pant_Belt_FRONT_4911
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+newmtl Pant_FRONT_4888
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+newmtl Pockert_Boundry
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:/Users/jai34/Downloads/Compressed/Shirt_OBJ/Shirt OBJ/I:/3D Models For Sales/Outfits/Shirt/Custom Textures/Shirt Custom Textures/Shirt Front/Shirt Front_Diffuse.jpg
+map_Bump C:/Users/jai34/Downloads/Compressed/Shirt_OBJ/Shirt OBJ/I:/3D Models For Sales/Outfits/Shirt/Custom Textures/Shirt Custom Textures/Shirt Front/Shirt Front_Normal.jpg
+
+newmtl Shirt_Middle_Boundry
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:/Users/jai34/Downloads/Compressed/Shirt_OBJ/Shirt OBJ/I:/3D Models For Sales/Outfits/Shirt/Custom Textures/Shirt Custom Textures/Shirt Front/Shirt Front_Diffuse.jpg
+map_Bump C:/Users/jai34/Downloads/Compressed/Shirt_OBJ/Shirt OBJ/I:/3D Models For Sales/Outfits/Shirt/Custom Textures/Shirt Custom Textures/Shirt Front/Shirt Front_Normal.jpg
+
+newmtl Sleeve_Left
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:/Users/jai34/Downloads/Compressed/Shirt_OBJ/Shirt OBJ/I:/3D Models For Sales/Outfits/Shirt/Custom Textures/Shirt Custom Textures/Left Sleeve/Left Sleeve_Diffuse.jpg
+map_Bump C:/Users/jai34/Downloads/Compressed/Shirt_OBJ/Shirt OBJ/I:/3D Models For Sales/Outfits/Shirt/Custom Textures/Shirt Custom Textures/Left Sleeve/Left Sleeve_Normal.jpg
+
+newmtl Sleeve_Right
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:/Users/jai34/Downloads/Compressed/Shirt_OBJ/Shirt OBJ/I:/3D Models For Sales/Outfits/Shirt/Custom Textures/Shirt Custom Textures/Right Sleeve/Right Sleeve_Diffuse.jpg
+map_Bump C:/Users/jai34/Downloads/Compressed/Shirt_OBJ/Shirt OBJ/I:/3D Models For Sales/Outfits/Shirt/Custom Textures/Shirt Custom Textures/Right Sleeve/Right Sleeve_Normal.jpg
+
+newmtl pantobj.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl shirt.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2

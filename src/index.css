@@ -1,8 +1,558 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+/* ────────────────────────────────────────────
+   DESIGN TOKENS - WHITE MINIMAL SHOWROOM
+──────────────────────────────────────────── */
+:root {
+  --bg-base: #D4D4D4; /* Darker off-white */
+  --bg-panel: rgba(212, 212, 212, 0.85); /* Matches off-white theme */
+  --bg-card: rgba(230, 230, 230, 0.6);
+  --bg-card-hover: #FFFFFF;
+
+  --border: rgba(0, 0, 0, 0.08);
+  --border-bright: rgba(0, 0, 0, 0.15);
+
+  --accent: #1D4ED8; /* Royal Blue */
+  --accent-2: #0E2A8A;
+  --gold: #bbaa99;
+
+  --text-primary: #1A1A1A;
+  --text-secondary: #5A5A5A;
+  --text-muted: #888888;
+
+  --success: #678b7a;
+  --danger: #b05c5c;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 18px;
+
+  --shadow-panel: -8px 0 24px rgba(0, 0, 0, 0.03);
+  --shadow-btn: 0 4px 14px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 1px 8px rgba(0, 0, 0, 0.04);
+
+  --transition: 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Jost', sans-serif;
+}
+
+/* ────────────────────────────────────────────
+   RESET & BASE
+──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
 #root {
   width: 100vw;
   height: 100vh;
 }
 
-body {
-  margin: 0;
+/* ────────────────────────────────────────────
+   APP LAYOUT
+──────────────────────────────────────────── */
+.app-root {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.canvas-area {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--bg-base);
+}
+
+/* ────────────────────────────────────────────
+   CANVAS BADGE
+──────────────────────────────────────────── */
+.canvas-badge {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  animation: pulse-dot 3s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.85); }
+}
+
+/* ────────────────────────────────────────────
+   PREMIUM CONTROL PANEL (GLASSMORPHISM)
+──────────────────────────────────────────── */
+.control-panel {
+  width: 400px;
+  max-width: 90%;
+  height: 100%;
+  background: var(--bg-panel);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  overflow: hidden;
+  font-family: var(--font-sans);
+}
+
+.panel-inner {
+  padding: 40px 30px;
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.panel-header {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.logo-text {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.panel-subtitle {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #888;
+  margin-top: 8px;
+}
+
+/* Glass Section */
+.glass-section {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.glass-section.no-border {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #999;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Toggle Grid */
+.toggle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.toggle-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 5px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-item span {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.toggle-icon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  transition: all 0.3s ease;
+}
+
+.toggle-icon.active {
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(29, 78, 216, 0.3);
+}
+
+.toggle-item:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+/* Color Grid */
+.color-grid-section {
+  margin-bottom: 15px;
+}
+
+.section-mini-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.color-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.color-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.color-swatch.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--bg-card), 0 0 0 3px var(--accent), 0 8px 16px rgba(0,0,0,0.15);
+  transform: scale(1.1);
+}
+
+.custom-color-btn {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #E5E5E5;
+  border: 1px dashed var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.custom-color-btn input[type="color"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-color-icon {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.custom-color-btn:hover {
+  background: #e8e8e8;
+  border-color: #999;
+  transform: scale(1.1);
+}
+
+
+/* Premium Select */
+.premium-select {
+  width: 100%;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  padding: 10px 15px;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+}
+
+/* View Action Buttons */
+.view-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.view-btn {
+  flex: 1;
+  padding: 12px;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.view-btn:hover:not(.active) {
+  background: var(--bg-card-hover);
+}
+
+/* ────────────────────────────────────────────
+   PANEL TABS & INVOICE SUMMARY
+──────────────────────────────────────────── */
+.panel-tabs {
+  display: flex;
+  gap: 10px;
+  background: var(--bg-card);
+  padding: 5px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px 0;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background: #FFFFFF;
+  color: var(--text-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.invoice-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.invoice-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.invoice-row span:last-child {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.invoice-separator {
+  height: 1px;
+  background: var(--border);
+  margin: 5px 0;
+}
+
+.invoice-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 5px;
+}
+
+.invoice-total span:last-child {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  color: var(--accent);
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(29, 78, 216, 0.3);
+}
+
+.checkout-btn:hover {
+  background: var(--accent-2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(29, 78, 216, 0.4);
+}
+
+/* ────────────────────────────────────────────
+   3D TRACKED PRICING UI (LEFT SIDE)
+──────────────────────────────────────────── */
+@keyframes fadeInRightSlow {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.pricing-anchor {
+  position: absolute;
+  top: 50%;
+  right: 0px; /* Anchor touches the 3D model center */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  pointer-events: none; /* Don't block 3D rotation */
+  animation: fadeInRightSlow 1.2s ease forwards;
+  transition: opacity 0.3s ease;
+}
+
+.pricing-anchor.hidden {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.price-line {
+  width: 0px; /* Completely hidden idle state */
+  height: 1px;
+  background: rgba(0, 0, 0, 0.15);
+  position: relative;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.price-line::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+}
+
+.price-box {
+  padding-right: 15px;
+  text-align: right;
+  opacity: 0;
+  transform: translateX(10px);
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.price-title {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  transition: color 0.4s ease;
+}
+
+.price-value {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: all 0.4s ease;
+}
+
+/* Active Highlight State */
+.pricing-anchor.active .price-line {
+  background: var(--text-secondary); 
+  width: 150px; 
+  opacity: 1;
+}
+
+.pricing-anchor.active .price-line::after {
+  background: var(--text-secondary);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-anchor.active .price-box {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.pricing-anchor.active .price-title {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.pricing-anchor.active .price-value {
+  font-weight: 600;
 }
