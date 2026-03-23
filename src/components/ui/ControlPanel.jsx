@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useModelStore, SHIRT_COLORS, PANT_COLORS, SHOES_COLORS, MATERIALS, ENVIRONMENTS } from '../../store/useModelStore';
+import { useModelStore, SHIRT_COLORS, PANT_COLORS, SHOES_COLORS } from '../../store/useModelStore';
 
 const ColorGrid = ({ title, colors, activeColor, onSelect }) => (
   <div className="color-grid-section">
@@ -41,7 +41,7 @@ export function ControlPanel() {
   const [selectedItem, setSelectedItem] = useState(null);
 
   // Dynamic pricing calculation
-  const totalCost = (shirtVisible ? 85 : 0) + (pantVisible ? 60 : 0) + (shoesVisible ? 120 : 0);
+  const totalCost = (shirtVisible ? 1199 : 0) + (pantVisible ? 1499 : 0) + (shoesVisible ? 2499 : 0);
 
   // Per-item details
   const itemDetails = {

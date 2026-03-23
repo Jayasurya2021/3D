@@ -22,7 +22,7 @@ export const Model = () => {
     const box = new THREE.Box3().setFromObject(clone);
     const size = new THREE.Vector3();
     box.getSize(size);
-    const center = new THREE.Vector3();
+    const center = new THREE.Vector3(); 
     box.getCenter(center);
 
     // Scale model geometry to fit standard R3F viewport (~2 units)
@@ -36,7 +36,7 @@ export const Model = () => {
     if (!modelObj) return;
 
     modelObj.traverse((child) => {
-      // HIDE MD/CLO 2D PATTERNS immediately
+      // HIDE MD/CLO 2D PATTERNS 
       if (child.isLine || child.isLineSegments) {
         child.visible = false;
         return;

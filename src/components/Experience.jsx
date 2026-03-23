@@ -1,4 +1,4 @@
-import { OrbitControls, Center, ContactShadows } from '@react-three/drei';
+import { OrbitControls, ContactShadows } from '@react-three/drei';
 import { Suspense } from 'react';
 import { Model } from './Model/Model';
 import { SceneEnvironment } from './SceneEnvironment';
@@ -14,7 +14,7 @@ export const Experience = () => {
 
       <SceneEnvironment environment={activeEnvironment} />
       
-      {/* Soft Premium Lighting */}
+      {/* Lighting */}
       <ambientLight intensity={0.8} />
       <directionalLight position={[5, 10, 5]} intensity={1.5} castShadow />
       <directionalLight position={[-5, -5, -5]} intensity={0.5} />
@@ -35,8 +35,8 @@ export const Experience = () => {
         enableZoom={true}
         minDistance={1.0}
         maxDistance={25.0}
-        minPolarAngle={Math.PI / 2} // Lock vertical rotation (look straight on)
-        maxPolarAngle={Math.PI / 2} // Lock vertical rotation (look straight on)
+        minPolarAngle={Math.PI / 2} // Lock vertical rotation 
+        maxPolarAngle={Math.PI / 2} // Lock vertical rotation 
         autoRotate={autoRotate}
         autoRotateSpeed={1.5}
         onStart={() => useModelStore.getState().setIsRotating(true)}
