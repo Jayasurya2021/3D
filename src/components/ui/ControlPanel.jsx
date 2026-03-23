@@ -28,14 +28,13 @@ const ColorGrid = ({ title, colors, activeColor, onSelect }) => (
 
 export function ControlPanel() {
   const {
-    activeMaterial, activeEnvironment, autoRotate,
+    autoRotate,
     shirtVisible, shirtColor,
     pantVisible, pantColor,
     shoesVisible, shoesColor,
-    setMaterial, setEnvironment, setAutoRotate,
-    setShirtVisible, setShirtColor,
-    setPantVisible, setPantColor,
-    setShoesVisible, setShoesColor,
+    setAutoRotate,
+    setShirtColor,
+    setPantColor, setShoesColor,
   } = useModelStore();
 
   const [activeTab, setActiveTab] = useState('customize');
@@ -46,9 +45,9 @@ export function ControlPanel() {
 
   // Per-item details
   const itemDetails = {
-    shirt: { name: 'Shirt', color: shirtColor, material: 'Pure Silk', price: '$85.00' },
-    pant: { name: 'Pant', color: pantColor, material: 'Fine Linen', price: '$60.00' },
-    shoes: { name: 'Shoes', color: shoesColor, material: 'Genuine Leather', price: '$120.00' },
+    shirt: { name: 'Classic Dress Shirt', brand: 'Raymond', price: '₹1,199', rating: '4.3 / 5', category: "Men's Shirt" },
+    pant: { name: 'Formal Slim Pant', brand: 'Arrow', price: '₹1,499', rating: '4.1 / 5', category: "Men's Trouser" },
+    shoes: { name: 'Oxford Leather Shoes', brand: 'Clarks', price: '₹2,499', rating: '4.5 / 5', category: "Men's Footwear" },
   };
 
   const handleSelect = (item) => {
@@ -128,36 +127,24 @@ export function ControlPanel() {
                       padding: '12px 14px',
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '8px',
+                      gap: '7px',
                     }}
                   >
-                    <div style={{ fontWeight: 700, fontSize: '13px', color: 'rgba(200,200,200,0.9)', letterSpacing: '0.04em' }}>
-                      {details.name} Details
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'rgba(160,160,160,0.8)' }}>
-                      <span>Color</span>
-                      <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        <span
-                          style={{
-                            display: 'inline-block',
-                            width: '11px',
-                            height: '11px',
-                            borderRadius: '50%',
-                            background: details.color,
-                            border: '1px solid rgba(255,255,255,0.25)',
-                          }}
-                        />
-                        <span style={{ color: 'rgba(160,160,160,0.8)' }}>{details.color}</span>
-                      </span>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'rgba(160,160,160,0.8)' }}>
-                      <span>Material</span>
-                      <span>{details.material}</span>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: 'rgba(200,200,200,0.9)', fontWeight: 600 }}>
-                      <span>Price</span>
-                      <span>{details.price}</span>
-                    </div>
+                    {[
+                      { label: 'Product', value: details.name },
+                      { label: 'Brand', value: details.brand },
+                      { label: 'Price', value: details.price },
+                      { label: 'Rating', value: details.rating },
+                      { label: 'Category', value: details.category },
+                    ].map(({ label, value }) => (
+                      <div
+                        key={label}
+                        style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'rgba(160,160,160,0.8)' }}
+                      >
+                        <span style={{ color: 'rgba(88, 87, 87, 0.7)' }}>{label}</span>
+                        <span style={{ textAlign: 'right', color: 'rgba(127, 127, 127, 0.9)' }}>{value}</span>
+                      </div>
+                    ))}
                   </div>
                 )}
               </div>
@@ -214,19 +201,19 @@ export function ControlPanel() {
               {shirtVisible && (
                 <div className="invoice-row">
                   <span>Shirt</span>
-                  <span>$85.00</span>
+                  <span>₹1,199</span>
                 </div>
               )}
               {pantVisible && (
                 <div className="invoice-row">
                   <span>Classic Pant</span>
-                  <span>$60.00</span>
+                  <span>₹1,499</span>
                 </div>
               )}
               {shoesVisible && (
                 <div className="invoice-row">
                   <span>Leather Shoes</span>
-                  <span>$120.00</span>
+                  <span>₹2,499</span>
                 </div>
               )}
 
@@ -234,7 +221,7 @@ export function ControlPanel() {
 
               <div className="invoice-total">
                 <span>Total</span>
-                <span>${totalCost.toFixed(2)}</span>
+                <span>₹{totalCost.toFixed(2)}</span>
               </div>
 
               <button className="checkout-btn">Complete Outfit</button>

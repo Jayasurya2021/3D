@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import * as THREE from 'three';
 import { useGLTF, Html } from '@react-three/drei';
 import { useModelStore } from '../../store/useModelStore';
@@ -116,7 +116,7 @@ export const Model = () => {
                 <div className="price-line" />
                 <div className="price-box">
                   <span className="price-title">Shirt</span>
-                  <span className="price-value">$85.00</span>
+                  <span className="price-value">₹1,199</span>
                 </div>
               </div>
             </Html>
@@ -132,7 +132,7 @@ export const Model = () => {
                 <div className="price-line" />
                 <div className="price-box">
                   <span className="price-title">Classic Pant</span>
-                  <span className="price-value">$60.00</span>
+                  <span className="price-value">₹1,499</span>
                 </div>
               </div>
             </Html>
@@ -148,7 +148,7 @@ export const Model = () => {
                 <div className="price-line" />
                 <div className="price-box">
                   <span className="price-title">Leather Shoes</span>
-                  <span className="price-value">$120.00</span>
+                  <span className="price-value">₹2,499</span>
                 </div>
               </div>
             </Html>

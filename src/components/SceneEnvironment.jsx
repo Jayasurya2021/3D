@@ -1,4 +1,4 @@
-import { Environment, ContactShadows } from '@react-three/drei';
+import { Environment } from '@react-three/drei';
 
 export const SceneEnvironment = ({ environment }) => {
   return (
